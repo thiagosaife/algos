@@ -6,7 +6,7 @@ process.argv.forEach((val) => {
   }
 });
 
-function P(n = 0) {
+function P(n) {
   let k = 1;
 
   while (k < n) {
