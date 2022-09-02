@@ -24,3 +24,5 @@ function P(n = 0) {
 console.log(P(n));
 
 // run node proof.js n
+
+// Algorithm: Proof by Mathematical Induction - Inspired by the book "The art of computer programming" by Donald Knuth
