@@ -31,3 +31,4 @@ switch (f) {
     console.log('default', factorialMemoization(n))
 }
       
+// run node factorial.js n f=bruteForce | memoization

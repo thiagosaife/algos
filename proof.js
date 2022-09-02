@@ -22,3 +22,5 @@ function P(n = 0) {
 }
 
 console.log(P(n));
+
+// run node proof.js n
