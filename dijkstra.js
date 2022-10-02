@@ -9,7 +9,7 @@ const graph = {
 };
 
 function Dijkstra (graph, source) {
-  const distances = {}; // distances object
+  const distances = {};
   for (const node in graph) { // set initial state of distances object
     distances[node] = Infinity; // set initial distance value to infinity
   }
@@ -24,7 +24,7 @@ function Dijkstra (graph, source) {
       }
     }
   }
-  return distances; // once all nodes have been visited, return the distances object
+  return distances;
 }
 // time complexity: O(n^2)
 // space complexity: O(n)
@@ -35,14 +35,14 @@ function findSmallestNode (distances, unvisited) {
     if (unvisited.includes(node)) { // if the node is in the unvisited array
       if (smallest === null) { // if the smallest node is still null
         smallest = node; // set the smallest node to the current node
-      } else { // otherwise
+      } else {
         if (distances[node] < distances[smallest]) { // if the current node's distance is less than the smallest node's distance
           smallest = node; // set the smallest node to the current node
         }
       }
     }
   }
-  return smallest; // return the smallest node
+  return smallest;
 }
 // time complexity: O(n)
 // space complexity: O(1)
