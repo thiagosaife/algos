@@ -1,6 +1,6 @@
-let unvisited = ['A', 'B', 'C', 'D', 'E'];
+const unvisited = ['A', 'B', 'C', 'D', 'E'];
 // This graph was inspired by this video https://www.youtube.com/watch?v=pVfj6mxhdMw
-let graph = {
+const graph = {
   A: { B: 6, D: 1 },
   B: { A: 6, C: 5, D: 2, E: 2 },
   C: { B: 5, E: 5 },
@@ -9,16 +9,16 @@ let graph = {
 };
 
 function Dijkstra (graph, source) {
-  let distances = {}; // distances object
-  for (let node in graph) { // set initial state of distances object
+  const distances = {}; // distances object
+  for (const node in graph) { // set initial state of distances object
     distances[node] = Infinity; // set initial distance value to infinity
   }
   distances[source] = 0; // set distance from source to source to zero
   while (unvisited.length > 0) { // while there are nodes to visit
-    let smallest = findSmallestNode(distances, unvisited); // find the nearest node
+    const smallest = findSmallestNode(distances, unvisited); // find the nearest node
     unvisited.splice(unvisited.indexOf(smallest), 1); // remove the nearest node from unvisited array
-    for (let neighbor in graph[smallest]) { // for each of the nearest node's neighbors
-      let alt = distances[smallest] + graph[smallest][neighbor]; // calculate the distance to that neighbor
+    for (const neighbor in graph[smallest]) { // for each of the nearest node's neighbors
+      const alt = distances[smallest] + graph[smallest][neighbor]; // calculate the distance to that neighbor
       if (alt < distances[neighbor]) { // if the calculated distance is less than the stored distance
         distances[neighbor] = alt; // update the stored distance
       }
@@ -31,7 +31,7 @@ function Dijkstra (graph, source) {
 
 function findSmallestNode (distances, unvisited) {
   let smallest = null; // set the smallest node to null
-  for (let node in distances) { // for each node in the distances object
+  for (const node in distances) { // for each node in the distances object
     if (unvisited.includes(node)) { // if the node is in the unvisited array
       if (smallest === null) { // if the smallest node is still null
         smallest = node; // set the smallest node to the current node
