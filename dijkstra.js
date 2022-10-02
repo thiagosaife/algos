@@ -1,4 +1,5 @@
 let unvisited = ['A', 'B', 'C', 'D', 'E'];
+// This graph was inspired by this video https://www.youtube.com/watch?v=pVfj6mxhdMw
 let graph = {
   A: { B: 6, D: 1 },
   B: { A: 6, C: 5, D: 2, E: 2 },
