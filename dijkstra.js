@@ -32,14 +32,8 @@ function Dijkstra (graph, source) {
 function findSmallestNode (distances, unvisited) {
   let smallest = null; // set the smallest node to null
   for (const node in distances) { // for each node in the distances object
-    if (unvisited.includes(node)) { // if the node is in the unvisited array
-      if (smallest === null) { // if the smallest node is still null
-        smallest = node; // set the smallest node to the current node
-      } else {
-        if (distances[node] < distances[smallest]) { // if the current node's distance is less than the smallest node's distance
-          smallest = node; // set the smallest node to the current node
-        }
-      }
+    if (unvisited.includes(node) && (smallest === null || distances[node] < distances[smallest])) { // if the node is in the unvisited array and either the smallest node is null or the distance to the current node is less than the distance to the smallest node
+      smallest = node; // set the smallest node to the current node
     }
   }
   return smallest;
